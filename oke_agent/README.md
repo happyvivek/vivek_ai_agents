@@ -1,54 +1,187 @@
-# OkeAgent Crew
+# 🤖 OKE Diagnostic Agent (CrewAI-Powered)
 
-Welcome to the OkeAgent Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+Welcome to **OKE Agent**, a modular AI-powered diagnostic framework built using [CrewAI](https://docs.crewai.com/). This project is designed to manage and troubleshoot Oracle Kubernetes Engine (OKE) clusters using multiple specialized agents that work together to identify, explain, and optionally fix issues.
 
-## Installation
+---
 
-Ensure you have Python >=3.10 <3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+## 🚀 Features
 
-First, if you haven't already, install uv:
+- ✅ **Diagnostic Agent** – Runs full cluster checks (`kubectl` pods, nodes, PVCs, events)
+- 🔧 **Remediation Agent** – Simulates (or performs) safe remediations
+- 📈 **Observability Agent** – Gathers `kubectl top`, metrics, and event patterns
+- 🛡 **Security Audit Agent** – Flags risky RBACs, privileged pods, etc.
+- 💸 **Cost Optimization Agent** – Finds idle/over-provisioned resources
+- 📦 **Upgrade Planning Agent** – Simulates upgrade readiness with safety checks
+- 📂 **Logs** – Outputs diagnostics to timestamped `.log` files in `diagnostic_logs/`
 
-```bash
-pip install uv
+---
+
+## 📁 Project Structure
+
+```
+oke_agent/
+├── config/
+│   ├── agents.yaml          # Agent definitions and personalities
+│   └── tasks.yaml           # Task flow descriptions
+├── diagnostic_logs/         # Auto-generated logs from kubectl
+├── src/
+│   └── oke_agent/
+│       ├── crew.py          # Main CrewBase definition (agents + tasks)
+│       ├── main.py          # Entry point for running the Crew
+│       └── tools/
+│           └── custom_tool.py  # All tools: kubectl, remediation, observability, etc.
 ```
 
-Next, navigate to your project directory and install the dependencies:
+---
 
-(Optional) Lock the dependencies and install them by using the CLI command:
+## 🧠 Powered By CrewAI
+
+CrewAI is a Python framework to build multi-agent systems that collaborate to complete goals. This project uses:
+
+- `@CrewBase` – Marks the main orchestrator class
+- `@agent` – Registers an agent using a config + tool
+- `@task` – Defines what an agent should do
+- `@crew` – Connects agents + tasks into a final pipeline
+
+---
+
+## ⚙️ Installation
+
+### Prerequisites
+
+- Python 3.10+
+- `kubectl` installed and configured with a valid K8s cluster (OKE or otherwise)
+- Optional: OCI CLI access for more integrations
+
+### Setup
+
 ```bash
-crewai install
+git clone https://github.com/happyvivek/vivek_ai_agents.git
+cd vivek_ai_agents/oke_agent
+
+# Set up virtualenv
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Install dependencies
+pip install crewai pydantic
 ```
-### Customizing
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
+---
 
-- Modify `src/oke_agent/config/agents.yaml` to define your agents
-- Modify `src/oke_agent/config/tasks.yaml` to define your tasks
-- Modify `src/oke_agent/crew.py` to add your own logic, tools and specific args
-- Modify `src/oke_agent/main.py` to add custom inputs for your agents and tasks
+## 🧾 Configuration
 
-## Running the Project
+All agent and task configurations live under `config/`:
 
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
+### 🧑‍🚀 `agents.yaml`
+
+Defines agent roles, goals, and which tool they use:
+```yaml
+diagnostic_agent:
+  role: "Cluster Diagnostic Specialist"
+  goal: "Run kubectl diagnostics on pods, PVCs, nodes..."
+  model: gpt-4o-mini
+```
+
+### 🧠 `tasks.yaml`
+
+Describes each task and links it to its agent:
+```yaml
+diagnostic_task:
+  description: "Run diagnostics across pods/nodes"
+  expected_output: "Log summary and initial report"
+```
+
+---
+
+## 🧪 Running the Agent Crew
+
+To run the entire diagnostic pipeline:
 
 ```bash
-$ crewai run
+cd oke_agent
+LOG_LEVEL=DEBUG crewai run --active
 ```
 
-This command initializes the oke_agent Crew, assembling the agents and assigning them tasks as defined in your configuration.
+This runs all agents and tasks **sequentially** based on the config.
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+👉 Output reports (like pod status, node health) will be stored in:
+```
+diagnostic_logs/<timestamp>_diagnostic_report.log
+```
 
-## Understanding Your Crew
+---
 
-The oke_agent Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+## 🔬 Individual Tool Examples
 
-## Support
+Each tool class (in `custom_tool.py`) is:
+- Based on `BaseTool`
+- Has its own `args_schema` (via Pydantic)
+- Implements `_run(...)` logic
 
-For support, questions, or feedback regarding the OkeAgent Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
+Examples:
+- `KubectlTool` – runs `kubectl get pods`, `nodes`, etc.
+- `ObservabilityTool` – runs `kubectl top` and gathers events
+- `RemediationTool` – prints a simulated fix (can be extended)
 
-Let's create wonders together with the power and simplicity of crewAI.
+---
+
+## 🧱 How the System Works (Simplified)
+
+```
+@CrewBase
+class OkeDiagnosticAgent:
+    @agent → diagnostic_agent
+    @task  → diagnostic_task
+    @crew  → combines them into a Crew
+```
+
+When `crewai run` executes:
+- It finds all agents + tasks
+- Matches tools from `tools/`
+- Runs the full pipeline in order
+
+---
+
+## 🛠️ Extend the System
+
+Want to add a new capability?
+
+1. Create a tool in `custom_tool.py`:
+   ```python
+   class NewTool(BaseTool):
+       name = "my_tool"
+       args_schema = MyInput
+       def _run(self, input): ...
+   ```
+2. Add agent + task to the YAML files
+3. Register them in `crew.py` using `@agent` and `@task`
+
+---
+
+## 🧯 Error Handling
+
+- All `_run()` methods are wrapped in `try/except`
+- Failure messages return directly to the agent
+- Invalid inputs or `kubectl` errors are printed clearly
+
+---
+
+## 🤝 Contributing
+
+Feel free to:
+- Add real remediation logic
+- Extend the upgrade planner
+- Integrate with Prometheus, Grafana, or OCI APIs
+
+---
+
+## 📜 License
+
+MIT License (See `LICENSE` file)
+
+---
+
+## 📬 Author
+
+Built with ❤️ by [Vivek Singh](https://github.com/happyvivek)
