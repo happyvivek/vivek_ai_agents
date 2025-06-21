@@ -1,0 +1,4 @@
+NAMESPACE     LAST SEEN   TYPE      REASON    OBJECT                         MESSAGE
+kube-system   3m28s       Normal    BackOff   pod/coredns-57bd47c5cb-5mgm4   Back-off pulling image "ap-mumbai-1.ocir.io/axoxdievda5j/oke-public-coredns@sha256:10b102f71a4c2588ac1a920e67d7af030f009a09768284233dc3fc952d193293"
+kube-system   3m2s        Warning   Failed    pod/coredns-57bd47c5cb-5mgm4   Error: ImagePullBackOff
+kube-system   17m         Warning   Failed    pod/coredns-57bd47c5cb-5mgm4   Failed to pull image "ap-mumbai-1.ocir.io/axoxdievda5j/oke-public-coredns@sha256:10b102f71a4c2588ac1a920e67d7af030f009a09768284233dc3fc952d193293": rpc error: code = DeadlineExceeded desc = initializing source docker://ap-mumbai-1.ocir.io/axoxdievda5j/oke-public-coredns@sha256:10b102f71a4c2588ac1a920e67d7af030f009a09768284233dc3fc952d193293: pinging container registry ap-mumbai-1.ocir.io: Get "https://ap-mumbai-1.ocir.io/v2/": dial tcp 192.29.171.170:443: i/o timeout

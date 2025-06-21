@@ -1,0 +1,5 @@
+NAME           STATUS   ROLES   AGE    VERSION   INTERNAL-IP    EXTERNAL-IP   OS-IMAGE                   KERNEL-VERSION                   CONTAINER-RUNTIME
+10.20.12.114   Ready    node    17d    v1.33.0   10.20.12.114   <none>        Oracle Linux Server 8.10   5.15.0-308.179.6.el8uek.x86_64   cri-o://1.32.2-4.aa4f43777b7.el8
+10.20.13.126   Ready    node    17d    v1.33.0   10.20.13.126   <none>        Oracle Linux Server 8.10   5.15.0-308.179.6.el8uek.x86_64   cri-o://1.32.2-4.aa4f43777b7.el8
+10.20.13.91    Ready    node    3d3h   v1.33.0   10.20.13.91    <none>        Oracle Linux Server 8.10   5.15.0-308.179.6.el8uek.x86_64   cri-o://1.32.2-4.aa4f43777b7.el8
+10.20.13.99    Ready    node    17d    v1.33.0   10.20.13.99    <none>        Oracle Linux Server 8.10   5.15.0-308.179.6.el8uek.x86_64   cri-o://1.32.2-4.aa4f43777b7.el8

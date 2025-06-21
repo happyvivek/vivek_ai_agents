@@ -1,0 +1,25 @@
+NAMESPACE     NAME                                      READY   STATUS             RESTARTS       AGE    IP                NODE           NOMINATED NODE   READINESS GATES
+kube-system   calico-kube-controllers-cb7c98d86-zmvmd   1/1     Running            1 (16d ago)    17d    192.168.139.195   10.20.12.114   <none>           <none>
+kube-system   calico-node-4mqzq                         1/1     Running            6 (17d ago)    17d    10.20.13.126      10.20.13.126   <none>           <none>
+kube-system   calico-node-khzvn                         1/1     Running            10 (17d ago)   17d    10.20.12.114      10.20.12.114   <none>           <none>
+kube-system   calico-node-lsqnk                         1/1     Running            5 (17d ago)    17d    10.20.13.99       10.20.13.99    <none>           <none>
+kube-system   calico-node-t5x45                         1/1     Running            0              3d3h   10.20.13.91       10.20.13.91    <none>           <none>
+kube-system   coredns-57bd47c5cb-5mgm4                  0/1     ImagePullBackOff   0              3d3h   192.168.170.66    10.20.13.126   <none>           <none>
+kube-system   coredns-57bd47c5cb-g8hmh                  1/1     Running            0              17d    192.168.194.129   10.20.13.99    <none>           <none>
+kube-system   coredns-57bd47c5cb-zjnv8                  1/1     Running            0              17d    192.168.194.130   10.20.13.99    <none>           <none>
+kube-system   coredns-57bd47c5cb-zpwk5                  1/1     Running            0              17d    192.168.139.193   10.20.12.114   <none>           <none>
+kube-system   csi-oci-node-cdd8p                        1/1     Running            1 (3d3h ago)   3d3h   10.20.13.91       10.20.13.91    <none>           <none>
+kube-system   csi-oci-node-d8k7k                        1/1     Running            1 (17d ago)    17d    10.20.12.114      10.20.12.114   <none>           <none>
+kube-system   csi-oci-node-mshw8                        1/1     Running            1 (17d ago)    17d    10.20.13.99       10.20.13.99    <none>           <none>
+kube-system   csi-oci-node-zc29g                        1/1     Running            1 (17d ago)    17d    10.20.13.126      10.20.13.126   <none>           <none>
+kube-system   kube-dns-autoscaler-5459b84645-zmrx9      1/1     Running            0              17d    192.168.139.196   10.20.12.114   <none>           <none>
+kube-system   kube-proxy-4zjv2                          1/1     Running            0              3d3h   10.20.13.91       10.20.13.91    <none>           <none>
+kube-system   kube-proxy-7zhg9                          1/1     Running            0              17d    10.20.13.99       10.20.13.99    <none>           <none>
+kube-system   kube-proxy-glxpq                          1/1     Running            0              17d    10.20.13.126      10.20.13.126   <none>           <none>
+kube-system   kube-proxy-jxrlt                          1/1     Running            0              17d    10.20.12.114      10.20.12.114   <none>           <none>
+kube-system   kubernetes-dashboard-86d99bf876-v99h5     1/1     Running            0              17d    192.168.139.194   10.20.12.114   <none>           <none>
+kube-system   proxymux-client-j7wpj                     1/1     Running            0              3d3h   10.20.13.91       10.20.13.91    <none>           <none>
+kube-system   proxymux-client-m4gxz                     1/1     Running            0              17d    10.20.13.126      10.20.13.126   <none>           <none>
+kube-system   proxymux-client-n8mpd                     1/1     Running            0              17d    10.20.13.99       10.20.13.99    <none>           <none>
+kube-system   proxymux-client-ndc8n                     1/1     Running            0              17d    10.20.12.114      10.20.12.114   <none>           <none>
+namespace-b   nginx-96b9d695-7rtt9                      1/1     Running            0              17d    192.168.170.65    10.20.13.126   <none>           <none>

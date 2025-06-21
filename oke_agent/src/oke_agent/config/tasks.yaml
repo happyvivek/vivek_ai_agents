@@ -1,0 +1,67 @@
+diagnostic_task:
+  description: >
+    Run a full diagnostic on the Oracle Kubernetes Engine (OKE) cluster to identify operational issues.
+    This includes scanning for failing pods, unresponsive nodes, storage provisioning failures, and unstable workloads.
+  expected_output: >
+    A detailed report listing:
+    - Pods in Failed or CrashLoopBackOff states
+    - Nodes not in Ready state with reasons
+    - PersistentVolumeClaims (PVCs) stuck in Pending
+    - Related Kubernetes event logs for context
+    - Solutions we can apply to fix them in details also pointer on web where other people have fixed them
+  agent_id: diagnostic_agent
+
+observability_task:
+  description: >
+    Collect observability data from the OKE cluster including metrics, logs, and recent Kubernetes events.
+    Identify trends or anomalies that may indicate performance bottlenecks, latency spikes, or resource contention.
+  expected_output: >
+    A summary of:
+    - Pod and node resource usage (CPU/memory)
+    - Event anomalies (frequent restarts, evictions)
+    - Prometheus metric graphs and thresholds exceeded
+    - Suggested monitoring dashboards
+  agent_id: observability_agent
+
+remediation_task:
+  description: >
+    Based on the diagnostic report, take corrective action to resolve issues found in the cluster such as restarting pods,
+    patching broken deployments, or replacing failed nodes.
+  expected_output: >
+    - A list of remediation actions taken (e.g., pod restarts, node cordons, PVC adjustments)
+    - Commands used or recommended (`kubectl` or Helm)
+    - Status after remediation and any follow-up suggestions
+  agent_id: remediation_agent
+
+security_audit_task:
+  description: >
+    Perform a security audit of the OKE cluster. Inspect pod specs, RBAC roles, network policies, and container configurations
+    to detect potential security vulnerabilities.
+  expected_output: >
+    - List of pods with privileged access, hostPath mounts, or unbounded capabilities
+    - Over-permissive RBAC bindings
+    - Missing or misconfigured NetworkPolicies
+    - Recommendations based on CIS Kubernetes benchmarks
+  agent_id: security_agent
+
+cost_optimization_task:
+  description: >
+    Analyze the current cluster usage to identify over-provisioned workloads and underutilized resources.
+    Suggest strategies for optimizing OKE resource allocation and reducing cost.
+  expected_output: >
+    - List of pods with excessive CPU/memory limits
+    - Idle or underutilized nodes or pods
+    - Recommendations for autoscaling, right-sizing, or removing unused resources
+    - Estimated monthly cost savings
+  agent_id: cost_analysis_agent
+
+upgrade_readiness_task:
+  description: >
+    Evaluate the cluster’s readiness for an upgrade to a newer Kubernetes version.
+    Identify deprecated APIs, driver compatibility issues, and necessary pre-upgrade actions.
+  expected_output: >
+    - List of incompatible resources or APIs
+    - Recommended upgrade path (e.g., 1.27 → 1.28)
+    - Preflight checks and OCI-specific considerations
+    - Rollback plan if upgrade fails
+  agent_id: upgrade_agent

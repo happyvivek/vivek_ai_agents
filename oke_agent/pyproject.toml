@@ -1,0 +1,23 @@
+[project]
+name = "oke_agent"
+version = "0.1.0"
+description = "oke_agent using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.121.0,<1.0.0"
+]
+
+[project.scripts]
+oke_agent = "oke_agent.main:run"
+run_crew = "oke_agent.main:run"
+train = "oke_agent.main:train"
+replay = "oke_agent.main:replay"
+test = "oke_agent.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

@@ -1,0 +1,48 @@
+=== Pods ===
+NAMESPACE     NAME                                      READY   STATUS             RESTARTS        AGE     IP                NODE           NOMINATED NODE   READINESS GATES
+kube-system   calico-kube-controllers-cb7c98d86-zmvmd   1/1     Running            1 (20d ago)     20d     192.168.139.195   10.20.12.114   <none>           <none>
+kube-system   calico-node-4mqzq                         1/1     Running            6 (20d ago)     20d     10.20.13.126      10.20.13.126   <none>           <none>
+kube-system   calico-node-khzvn                         1/1     Running            10 (20d ago)    20d     10.20.12.114      10.20.12.114   <none>           <none>
+kube-system   calico-node-lsqnk                         1/1     Running            5 (20d ago)     20d     10.20.13.99       10.20.13.99    <none>           <none>
+kube-system   calico-node-t5x45                         1/1     Running            0               6d22h   10.20.13.91       10.20.13.91    <none>           <none>
+kube-system   coredns-57bd47c5cb-5mgm4                  0/1     ImagePullBackOff   0               6d22h   192.168.170.66    10.20.13.126   <none>           <none>
+kube-system   coredns-57bd47c5cb-g8hmh                  1/1     Running            0               20d     192.168.194.129   10.20.13.99    <none>           <none>
+kube-system   coredns-57bd47c5cb-zjnv8                  1/1     Running            0               20d     192.168.194.130   10.20.13.99    <none>           <none>
+kube-system   coredns-57bd47c5cb-zpwk5                  1/1     Running            0               20d     192.168.139.193   10.20.12.114   <none>           <none>
+kube-system   csi-oci-node-cdd8p                        1/1     Running            1 (6d22h ago)   6d22h   10.20.13.91       10.20.13.91    <none>           <none>
+kube-system   csi-oci-node-d8k7k                        1/1     Running            1 (20d ago)     20d     10.20.12.114      10.20.12.114   <none>           <none>
+kube-system   csi-oci-node-mshw8                        1/1     Running            1 (20d ago)     20d     10.20.13.99       10.20.13.99    <none>           <none>
+kube-system   csi-oci-node-zc29g                        1/1     Running            1 (20d ago)     20d     10.20.13.126      10.20.13.126   <none>           <none>
+kube-system   kube-dns-autoscaler-5459b84645-zmrx9      1/1     Running            0               20d     192.168.139.196   10.20.12.114   <none>           <none>
+kube-system   kube-proxy-4zjv2                          1/1     Running            0               6d22h   10.20.13.91       10.20.13.91    <none>           <none>
+kube-system   kube-proxy-7zhg9                          1/1     Running            0               20d     10.20.13.99       10.20.13.99    <none>           <none>
+kube-system   kube-proxy-glxpq                          1/1     Running            0               20d     10.20.13.126      10.20.13.126   <none>           <none>
+kube-system   kube-proxy-jxrlt                          1/1     Running            0               20d     10.20.12.114      10.20.12.114   <none>           <none>
+kube-system   kubernetes-dashboard-86d99bf876-v99h5     1/1     Running            0               20d     192.168.139.194   10.20.12.114   <none>           <none>
+kube-system   proxymux-client-57h2m                     0/1     ImagePullBackOff   0               3d7h    10.20.13.99       10.20.13.99    <none>           <none>
+kube-system   proxymux-client-j7wpj                     1/1     Running            0               6d22h   10.20.13.91       10.20.13.91    <none>           <none>
+kube-system   proxymux-client-m4gxz                     1/1     Running            0               20d     10.20.13.126      10.20.13.126   <none>           <none>
+kube-system   proxymux-client-ndc8n                     1/1     Running            0               20d     10.20.12.114      10.20.12.114   <none>           <none>
+namespace-b   nginx-96b9d695-7rtt9                      1/1     Running            0               20d     192.168.170.65    10.20.13.126   <none>           <none>
+
+
+=== Nodes ===
+NAME           STATUS   ROLES   AGE     VERSION   INTERNAL-IP    EXTERNAL-IP   OS-IMAGE                   KERNEL-VERSION                   CONTAINER-RUNTIME
+10.20.12.114   Ready    node    20d     v1.33.0   10.20.12.114   <none>        Oracle Linux Server 8.10   5.15.0-308.179.6.el8uek.x86_64   cri-o://1.32.2-4.aa4f43777b7.el8
+10.20.13.126   Ready    node    20d     v1.33.0   10.20.13.126   <none>        Oracle Linux Server 8.10   5.15.0-308.179.6.el8uek.x86_64   cri-o://1.32.2-4.aa4f43777b7.el8
+10.20.13.91    Ready    node    6d22h   v1.33.0   10.20.13.91    <none>        Oracle Linux Server 8.10   5.15.0-308.179.6.el8uek.x86_64   cri-o://1.32.2-4.aa4f43777b7.el8
+10.20.13.99    Ready    node    20d     v1.33.0   10.20.13.99    <none>        Oracle Linux Server 8.10   5.15.0-308.179.6.el8uek.x86_64   cri-o://1.32.2-4.aa4f43777b7.el8
+
+
+=== PVCs ===
+
+
+=== Events ===
+NAMESPACE     LAST SEEN   TYPE      REASON    OBJECT                         MESSAGE
+kube-system   119s        Normal    BackOff   pod/coredns-57bd47c5cb-5mgm4   Back-off pulling image "ap-mumbai-1.ocir.io/axoxdievda5j/oke-public-coredns@sha256:10b102f71a4c2588ac1a920e67d7af030f009a09768284233dc3fc952d193293"
+kube-system   82s         Warning   Failed    pod/coredns-57bd47c5cb-5mgm4   Error: ImagePullBackOff
+kube-system   2m22s       Normal    BackOff   pod/proxymux-client-57h2m      Back-off pulling image "ap-mumbai-1.ocir.io/axoxdievda5j/oke-public-proxymux-cli:8d4509c1e518fcb4e1a95191a4b6dff29a283dee-115@sha256:866d637f98a0e5451816d6992f90571e95d638d49636dbb7d9eaee873fb122f0"
+kube-system   118s        Warning   Failed    pod/proxymux-client-57h2m      Error: ImagePullBackOff
+kube-system   15m         Warning   Failed    pod/coredns-57bd47c5cb-5mgm4   Failed to pull image "ap-mumbai-1.ocir.io/axoxdievda5j/oke-public-coredns@sha256:10b102f71a4c2588ac1a920e67d7af030f009a09768284233dc3fc952d193293": rpc error: code = DeadlineExceeded desc = initializing source docker://ap-mumbai-1.ocir.io/axoxdievda5j/oke-public-coredns@sha256:10b102f71a4c2588ac1a920e67d7af030f009a09768284233dc3fc952d193293: pinging container registry ap-mumbai-1.ocir.io: Get "https://ap-mumbai-1.ocir.io/v2/": dial tcp 192.29.171.170:443: i/o timeout
+kube-system   42m         Normal    Pulling   pod/proxymux-client-57h2m      Pulling image "ap-mumbai-1.ocir.io/axoxdievda5j/oke-public-proxymux-cli:8d4509c1e518fcb4e1a95191a4b6dff29a283dee-115@sha256:866d637f98a0e5451816d6992f90571e95d638d49636dbb7d9eaee873fb122f0"
+kube-system   36m         Warning   Failed    pod/proxymux-client-57h2m      Failed to pull image "ap-mumbai-1.ocir.io/axoxdievda5j/oke-public-proxymux-cli:8d4509c1e518fcb4e1a95191a4b6dff29a283dee-115@sha256:866d637f98a0e5451816d6992f90571e95d638d49636dbb7d9eaee873fb122f0": rpc error: code = DeadlineExceeded desc = initializing source docker://ap-mumbai-1.ocir.io/axoxdievda5j/oke-public-proxymux-cli@sha256:866d637f98a0e5451816d6992f90571e95d638d49636dbb7d9eaee873fb122f0: pinging container registry ap-mumbai-1.ocir.io: Get "https://ap-mumbai-1.ocir.io/v2/": dial tcp 192.29.171.170:443: i/o timeout
