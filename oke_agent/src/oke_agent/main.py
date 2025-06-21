@@ -37,16 +37,16 @@ def get_inputs():
     }
 
 def run():
-    print(f"⏳ Starting OKE Diagnostic Crew - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f" Starting OKE Diagnostic Crew - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     inputs = get_inputs()
 
     try:
         result = OkeDiagnosticAgent().crew().kickoff(inputs=inputs)
-        print("\n✅ Final Output:\n")
+        print("\n Final Output:\n")
         print(result.raw)
     except Exception as e:
         traceback.print_exc()
-        print(f"\n❌ Error occurred while executing the crew: {e}")
+        print(f"\n Error occurred while executing the crew: {e}")
 
 if __name__ == "__main__":
     run()

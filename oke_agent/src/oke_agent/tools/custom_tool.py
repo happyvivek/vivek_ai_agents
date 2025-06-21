@@ -117,9 +117,9 @@ class KubectlTool(BaseTool):
                 "\n=== Events ===", events
             ])
             save_output_to_file("diagnostic_report", report)
-            return "🧪 Diagnostic report generated successfully."
+            return " Diagnostic report generated successfully."
         except Exception as e:
-            return f"❌ Failed to run diagnostic: {e}"
+            return f" Failed to run diagnostic: {e}"
 
 # ========== Remediation Tool ==========
 
@@ -132,7 +132,7 @@ class RemediationTool(BaseTool):
     args_schema: Type[BaseModel] = RemediationInput
 
     def _run(self, action: str) -> str:
-        return f"⚙️ Simulated remediation executed: {action}"  # Stub for now
+        return f" Simulated remediation executed: {action}"  # Stub for now
 
 # ========== Observability Tool ==========
 
@@ -159,7 +159,7 @@ class ObservabilityTool(BaseTool):
             save_output_to_file(f"{component}_observability_report", report)
             return "📈 Observability report generated successfully."
         except Exception as e:
-            return f"❌ Failed to generate observability report: {e}"
+            return f" Failed to generate observability report: {e}"
 
 
 # ========== Security Audit Tool ==========
@@ -173,7 +173,7 @@ class SecurityAuditTool(BaseTool):
     args_schema: Type[BaseModel] = SecurityAuditInput
 
     def _run(self, scan_scope: str) -> str:
-        return f"🛡️ Security audit simulated for: {scan_scope}"  # Extend with real logic later
+        return f" Security audit simulated for: {scan_scope}"  # Extend with real logic later
 
 # ========== Cost Optimization Tool ==========
 
@@ -186,7 +186,7 @@ class CostOptimizationTool(BaseTool):
     args_schema: Type[BaseModel] = CostOptimizationInput
 
     def _run(self, scope: str) -> str:
-        return f"💸 Cost optimization analysis completed for: {scope}"  # Stub for real pricing logic
+        return f" Cost optimization analysis completed for: {scope}"  # Stub for real pricing logic
 
 # ========== Upgrade Planning Tool ==========
 
@@ -199,4 +199,4 @@ class UpgradeTool(BaseTool):
     args_schema: Type[BaseModel] = UpgradeInput
 
     def _run(self, target_version: str) -> str:
-        return f"📦 Upgrade precheck simulated for version: {target_version}"  # Hook into `kubectl get --raw ...` etc.
+        return f" Upgrade precheck simulated for version: {target_version}"  # Hook into `kubectl get --raw ...` etc.
