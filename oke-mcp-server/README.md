@@ -6,6 +6,14 @@ It exposes Kubernetes operations as MCP tools (starting with `describe_pods`) an
 
 ---
 
+## Screenshots
+
+<img width="1072" height="777" alt="4" src="screenshots/4.png" />
+<img width="916" height="788" alt="3" src="screenshots/3.png" />
+<img width="1373" height="817" alt="2" src="screenshots/2.png" />
+<img width="1204" height="785" alt="1" src="screenshots/1.png" />
+---
+
 ##Features
 
 - MCP server implementation in **Python**
@@ -102,7 +110,3 @@ The OKE MCP Server exposes the following tools for interacting with the Kubernet
 
 ---
 
-<img width="1072" height="777" alt="4" src="https://github.com/user-attachments/assets/e6a04425-f74b-43e2-98d3-1ed9f3403073" />
-<img width="916" height="788" alt="3" src="https://github.com/user-attachments/assets/5d416f12-ad86-4462-8029-64c6629395a4" />
-<img width="1373" height="817" alt="2" src="https://github.com/user-attachments/assets/5c30e0c4-8a0a-4eb7-ae09-2cca1a9f78e8" />
-<img width="1204" height="785" alt="1" src="https://github.com/user-attachments/assets/64a2a736-8905-46cc-9bec-bf0cd672f9df" />
