@@ -1,3 +1,4 @@
+
 # OKE MCP Server
 
 The **OKE MCP Server** is a **Python-based Model Context Protocol (MCP) server** for interacting with **Oracle Kubernetes Engine (OKE)** clusters.  
@@ -101,16 +102,7 @@ The OKE MCP Server exposes the following tools for interacting with the Kubernet
 
 ---
 
-<img src="./screenshots/1.png" alt="Screenshot" width="400">
-
-<img src="screenshots/2.png" alt="Screenshot" width="400">
-
-<img src="screenshots/3.png" alt="Screenshot" width="400">
-
-<img src="screenshots/4.png" alt="Screenshot" width="400">
-
-![Screenshot 1](./screenshots/1.png)
-![Screenshot 2](screenshots/2.png)
-![Screenshot 3](screenshots/3.png)
-![Screenshot 4](screenshots/4.png)
-
+<img width="1072" height="777" alt="4" src="https://github.com/user-attachments/assets/e6a04425-f74b-43e2-98d3-1ed9f3403073" />
+<img width="916" height="788" alt="3" src="https://github.com/user-attachments/assets/5d416f12-ad86-4462-8029-64c6629395a4" />
+<img width="1373" height="817" alt="2" src="https://github.com/user-attachments/assets/5c30e0c4-8a0a-4eb7-ae09-2cca1a9f78e8" />
+<img width="1204" height="785" alt="1" src="https://github.com/user-attachments/assets/64a2a736-8905-46cc-9bec-bf0cd672f9df" />
