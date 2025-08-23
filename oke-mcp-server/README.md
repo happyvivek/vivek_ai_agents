@@ -101,7 +101,7 @@ The OKE MCP Server exposes the following tools for interacting with the Kubernet
 
 ---
 
-<img src="screenshots/1.png" alt="Screenshot" width="400">
+<img src="./screenshots/1.png" alt="Screenshot" width="400">
 
 <img src="screenshots/2.png" alt="Screenshot" width="400">
 
