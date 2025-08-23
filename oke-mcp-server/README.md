@@ -100,3 +100,11 @@ The OKE MCP Server exposes the following tools for interacting with the Kubernet
 | `update_deployments_from_config` | Updates deployments based on keyword-image mappings in the config.                          | None                                                                                              | Summary of updates applied                      |
 
 ---
+
+<img src="screenshots/1.png" alt="Screenshot" width="400">
+
+<img src="screenshots/2.png" alt="Screenshot" width="400">
+
+<img src="screenshots/3.png" alt="Screenshot" width="400">
+
+<img src="screenshots/4.png" alt="Screenshot" width="400">
