@@ -36,7 +36,17 @@ Clone this repository:
 ```bash
 git clone https://github.com/happyvivek/vivek_ai_agents.git
 cd vivek_ai_agents/oke-mcp-server
-##Configure
+#install uv
+https://docs.astral.sh/uv/getting-started/installation/
+# Create virtual environment and activate it
+uv venv
+source .venv/bin/activate
+uv init oke-mcp-server
+cp -pav vivek_ai_agents/oke-mcp-server/*.py oke-mcp-server 
+uv add "mcp[cli]"
+
+
+##Configure mcp server in cline or claude desktop
 
 {
   "mcpServers": {
