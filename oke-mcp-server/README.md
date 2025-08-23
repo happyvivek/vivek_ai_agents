@@ -8,10 +8,10 @@ It exposes Kubernetes operations as MCP tools (starting with `describe_pods`) an
 
 ## Screenshots
 
-<img width="1072" height="777" alt="4" src="screenshots/4.png" />
-<img width="916" height="788" alt="3" src="screenshots/3.png" />
-<img width="1373" height="817" alt="2" src="screenshots/2.png" />
-<img width="1204" height="785" alt="1" src="screenshots/1.png" />
+<img width="600" height="400" alt="4" src="screenshots/4.png" />
+<img width="600" height="400" alt="3" src="screenshots/3.png" />
+<img width="600" height="400" alt="2" src="screenshots/2.png" />
+<img width="600" height="400" alt="1" src="screenshots/1.png" />
 ---
 
 ##Features
